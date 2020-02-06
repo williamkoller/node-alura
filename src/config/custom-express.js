@@ -5,7 +5,7 @@ require('marko/express');
 const express = require('express');
 // init express
 const app = express();
-// import bodyParser
+// import bodyParser middlaware
 const bodyParser = require('body-parser');
 
 app.use('/estatico', express.static('src/app/public'));
