@@ -28,7 +28,7 @@ function render(input, out, __component, component, state) {
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
     out.w("<tr" +
-      marko_attr("id", "livro" + livro.id) +
+      marko_attr("id", "livro_" + livro.id) +
       "><td>" +
       marko_escapeXml(livro.id) +
       "</td><td>" +
