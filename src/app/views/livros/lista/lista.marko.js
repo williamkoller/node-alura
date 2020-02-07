@@ -20,11 +20,11 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<h1> Listagem de livros </h1><table id=\"livros\"><tr><td>ID</td><td>Título</td><td>Preço</td><td>Editar</td><td>Remover</td></tr>");
+  out.w("<h1> Listagem de livros </h1><a href=\"/livros/form\">Adicionar</a><table id=\"livros\"><tr><td>ID</td><td>Título</td><td>Preço</td><td>Editar</td><td>Remover</td></tr>");
 
   var $for$0 = 0;
 
-  marko_forOf(data.livros, function(livro) {
+  marko_forOf(data.livros, function() {
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
     out.w("<tr" +
@@ -46,7 +46,7 @@ function render(input, out, __component, component, state) {
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "20");
+  await_reorderer_tag({}, out, __component, "21");
 
   out.w("</body></html>");
 }

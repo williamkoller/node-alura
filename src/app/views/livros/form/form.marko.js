@@ -1,16 +1,18 @@
-// Compiled using marko@4.18.39 - DO NOT EDIT
+// Compiled using marko@4.13.4-1 - DO NOT EDIT
 "use strict";
 
 var marko_template = module.exports = require("marko/src/html").t(__filename),
-    marko_componentType = "/dev-studies-node$1.0.0/src/app/views/livros/form/form.marko",
-    marko_renderer = require("marko/src/runtime/components/renderer"),
-    marko_loadTag = require("marko/src/runtime/helpers/load-tag"),
-    component_globals_tag = marko_loadTag(require("marko/src/core-tags/components/component-globals-tag")),
-    marko_attr = require("marko/src/runtime/html/helpers/attr"),
-    helpers_escape_xml = require("marko/src/runtime/html/helpers/escape-xml"),
-    marko_escapeXml = helpers_escape_xml.x,
-    init_components_tag = marko_loadTag(require("marko/src/core-tags/components/init-components-tag")),
-    await_reorderer_tag = marko_loadTag(require("marko/src/core-tags/core/await/reorderer-renderer"));
+    marko_componentType = "/casadocodigo$1.0.0/src/app/views/livros/form/form.marko",
+    components_helpers = require("marko/src/components/helpers"),
+    marko_renderer = components_helpers.r,
+    marko_defineComponent = components_helpers.c,
+    marko_helpers = require("marko/src/runtime/html/helpers"),
+    marko_loadTag = marko_helpers.t,
+    component_globals_tag = marko_loadTag(require("marko/src/components/taglib/component-globals-tag")),
+    marko_escapeXmlAttr = marko_helpers.xa,
+    marko_escapeXml = marko_helpers.x,
+    init_components_tag = marko_loadTag(require("marko/src/components/taglib/init-components-tag")),
+    await_reorderer_tag = marko_loadTag(require("marko/src/taglibs/async/await-reorderer-tag"));
 
 function render(input, out, __component, component, state) {
   var data = input;
@@ -22,16 +24,16 @@ function render(input, out, __component, component, state) {
   out.w("<h1>Cadastro de livros</h1><form action=\"/livros\" method=\"post\">");
 
   if (data.livro.id) {
-    out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" id=\"id\" name=\"id\"" +
-      marko_attr("value", "" + data.livro.id) +
-      "></div>");
+    out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
+      marko_escapeXmlAttr(data.livro.id) +
+      "\"></div>");
   }
 
-  out.w("<div><label for=\"titulo\">Titulo:</label><input type=\"text\" id=\"titulo\" name=\"titulo\"" +
-    marko_attr("value", "" + data.livro.titulo) +
-    " placeholder=\"coloque o titulo\"></div><div><label for=\"preco\">Preço:</label><input type=\"text\" id=\"preco\" name=\"preco\"" +
-    marko_attr("value", "" + data.livro.preco) +
-    " placeholder=\"150.25\"></div><div><label for=\"descricao\">Descrição:</label><textarea cols=\"20\" rows=\"10\" id=\"descricao\" name=\"descricao\" placeholder=\"fale sobre o livro\">" +
+  out.w("<div><label for=\"titulo\">Titulo:</label><input type=\"text\" id=\"titulo\" name=\"titulo\" value=\"" +
+    marko_escapeXmlAttr(data.livro.titulo) +
+    "\" placeholder=\"coloque o titulo\"></div><div><label for=\"preco\">Preço:</label><input type=\"text\" id=\"preco\" name=\"preco\" value=\"" +
+    marko_escapeXmlAttr(data.livro.preco) +
+    "\" placeholder=\"150.25\"></div><div><label for=\"descricao\">Descrição:</label><textarea cols=\"20\" rows=\"10\" id=\"descricao\" name=\"descricao\" placeholder=\"fale sobre o livro\">" +
     marko_escapeXml(data.livro.descricao) +
     "</textarea></div><input type=\"submit\" value=\"Salvar\"></form>");
 
@@ -47,11 +49,13 @@ marko_template._ = marko_renderer(render, {
     ___type: marko_componentType
   });
 
+marko_template.Component = marko_defineComponent({}, marko_template._);
+
 marko_template.meta = {
-    id: "/dev-studies-node$1.0.0/src/app/views/livros/form/form.marko",
+    id: "/casadocodigo$1.0.0/src/app/views/livros/form/form.marko",
     tags: [
-      "marko/src/core-tags/components/component-globals-tag",
-      "marko/src/core-tags/components/init-components-tag",
-      "marko/src/core-tags/core/await/reorderer-renderer"
+      "marko/src/components/taglib/component-globals-tag",
+      "marko/src/components/taglib/init-components-tag",
+      "marko/src/taglibs/async/await-reorderer-tag"
     ]
   };
