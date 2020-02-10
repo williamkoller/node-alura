@@ -1,24 +1,27 @@
 const LivroController = require('../controllers/livroController');
 const livroController = new LivroController();
 
+const BaseController = require('../controllers/baseController');
+const baseController = new BaseController();
+
+const { check } = require('express-validator/check');
 
 module.exports = (app) => {
-
-    app.get('/', function(req, resp) {
-        resp.redirect('http://localhost:3000/livros' + req.url)
-    });
-
-    app.get('/', livroController.index());
+    app.get('/', baseController.home());
 
     app.get('/livros', livroController.lista());
 
-    app.get('/livros/form', livroController.formulario());
+    app.get('/livros/form', livroController.formularioCadastro());
 
-    app.get('/livros/form/:id', livroController.editar());
+    app.get('/livros/form/:id', livroController.formularioEdicao());
 
-    app.post('/livros', livroController.adicionar());
+    app.post('/livros', [
+            check('titulo').isLength({ min: 5 }).withMessage('O título precisa ter no mínimo 5 caracteres!'),
+            check('preco').isCurrency().withMessage('O preço precisa ter um valor monetário válido!')
+        ],
+        livroController.cadastra());
 
-    app.put('/livros', livroController.atualizar());
+    app.put('/livros', livroController.edita());
 
     app.delete('/livros/:id', livroController.remove());
 };
