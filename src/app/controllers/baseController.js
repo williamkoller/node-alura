@@ -1,5 +1,11 @@
 class BaseController {
 
+    static rotas() {
+        return {
+            home: '/home'
+        }
+    }
+
     home() {
         return function(req, resp) {
             resp.marko(
