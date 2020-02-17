@@ -7,7 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js --ignore *.marko.js"
   },
-  "author": "Gabriel Leite",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "pretty-quick --staged"
+    }
+  },
+  "author": "William Koller",
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.18.3",
@@ -16,12 +22,6 @@
     "marko": "4.13.4-1",
     "method-override": "3.0.0",
     "sqlite": "^3.0.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "pretty-quick --staged"
-    }
   },
   "devDependencies": {
     "husky": "^4.2.3",
