@@ -6,19 +6,16 @@ class BaseController {
       login: "/login"
     };
   }
-
   home() {
     return function(req, resp) {
       resp.marko(templates.base.home);
     };
   }
-
   login() {
     return function(req, resp) {
       resp.marko(templates.base.login);
     };
   }
-
   efetuarLogin() {
     return function(req, resp) {};
   }
