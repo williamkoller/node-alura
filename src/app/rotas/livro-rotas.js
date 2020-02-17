@@ -1,17 +1,17 @@
-const LivroController = require('../controllers/livroController');
+const LivroController = require("../controllers/livroController");
 const livroController = new LivroController();
+const Livro = require("../modelos/livro");
+module.exports = app => {
+  const rotasLivro = LivroController.rotas();
+  app.get(rotasLivro.lista, livroController.lista());
 
-const Livro = require('../modelos/livro');
+  app
+    .route(rotasLivro.cadastro)
+    .get(livroController.formularioCadastro())
+    .post(Livro.validacoes(), livroController.cadastra())
+    .put(livroController.edita());
 
-module.exports = (app) => {
-    const rotasLivro = LivroController.rotas();
-    app.get(rotasLivro.lista, livroController.lista());
+  app.get(rotasLivro.edicao, livroController.formularioEdicao());
 
-    app.route(rotasLivro.cadastro).get(livroController.formularioCadastro())
-        .post(Livro.validacoes(), livroController.cadastra())
-        .put(livroController.edita());
-
-    app.get(rotasLivro.edicao, livroController.formularioEdicao());
-
-    app.delete(rotasLivro.delecao, livroController.remove());
+  app.delete(rotasLivro.delecao, livroController.remove());
 };
