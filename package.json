@@ -10,8 +10,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
-      "pre-push": "pretty-quick --staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-push": "pretty-quick --staged"
     }
   },
   "author": "William Koller",
@@ -25,7 +24,6 @@
     "sqlite": "^3.0.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
     "husky": "^4.2.3",
     "nodemon": "1.18.4",
     "prettier": "^1.19.1",
