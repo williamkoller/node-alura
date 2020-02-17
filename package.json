@@ -1,23 +1,32 @@
 {
-    "name": "casadocodigo",
-    "version": "1.0.0",
-    "description": "Livraria Casa do Codigo",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon server.js --ignore *.marko.js"
-    },
-    "author": "Gabriel Leite",
-    "license": "ISC",
-    "dependencies": {
-        "body-parser": "1.18.3",
-        "express": "4.16.3",
-        "express-validator": "^6.4.0",
-        "marko": "4.13.4-1",
-        "method-override": "3.0.0",
-        "sqlite": "^3.0.3"
-    },
-    "devDependencies": {
-        "nodemon": "1.18.4"
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "Livraria Casa do Codigo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js --ignore *.marko.js"
+  },
+  "author": "Gabriel Leite",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "express-validator": "^6.4.0",
+    "marko": "4.13.4-1",
+    "method-override": "3.0.0",
+    "sqlite": "^3.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "pretty-quick --staged"
     }
+  },
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "nodemon": "1.18.4",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  }
 }
