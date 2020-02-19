@@ -1,6 +1,7 @@
 const LivroController = require("../controllers/livroController");
 const livroController = new LivroController();
 const Livro = require("../modelos/livro");
+
 module.exports = app => {
   const rotasLivro = LivroController.rotas();
   app.get(rotasLivro.lista, livroController.lista());
