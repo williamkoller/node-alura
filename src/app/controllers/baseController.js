@@ -2,7 +2,7 @@ const templates = require("../views/templates");
 class BaseController {
   static rotas() {
     return {
-      home: "/home",
+      home: "/",
       login: "/login"
     };
   }
