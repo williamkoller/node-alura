@@ -2,4 +2,3 @@ node_modules/
 package-lock.json
 yarn.lock
 data.db
-/src/app/views/base/login/login.marko.js
