@@ -5,15 +5,15 @@ class UsuarioDao {
 
   buscaPorEmail(email) {
     return new Promise((resolve, reject) => {
-      this._db.all(
+      this._db.get(
         `
           SELECT * FROM usuarios WHERE email = ?
           `,
         [email],
-        (erro, email) => {
+        (erro, usuario) => {
           if (erro) return reject("Não foi possível buscar o e-mail");
 
-          return resolve(email);
+          return resolve(usuario);
         }
       );
     });
