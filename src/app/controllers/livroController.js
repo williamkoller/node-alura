@@ -5,6 +5,7 @@ const templates = require("../views/templates");
 class LivroController {
   static rotas() {
     return {
+      autenticadas: "/livros*",
       lista: "/livros",
       cadastro: "/livros/form",
       edicao: "/livros/form/:id",
